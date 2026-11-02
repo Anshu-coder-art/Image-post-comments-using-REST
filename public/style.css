@@ -1,0 +1,32 @@
+h1{
+    color : maroon;
+}
+.post{
+    background-color: blanchedalmond;
+}
+.user{
+    font-style : italic;
+}
+img{
+    height:400px;
+    width:500px;
+}
+span{
+    color:black;
+    font-weight: bold;
+}
+h4{
+    color:grey;
+    font-weight: 100;
+}
+#more{
+    color: grey;
+    text-decoration: none;
+}
+h2{
+    text-decoration: underline;
+}
+
+.comment{
+    background-color:bisque;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See All Comments</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Here is your post in Detail</h2>
+    <p>Post id: <%= post.id %> </p>
+    <div class="post">
+        <h3 class="user">@<%= post.username %> </h3>
+        <img src="<%=post.image%>" alt="Loading">
+        <h4 class="content">&nbsp;<span><%= post.username %></span>: &nbsp;&nbsp;<%= post.content %> </h4>
+    </div>
+
+    <div class="comment">
+        <h2>All Comments</h2>
+        <% for (const [key, value] of Object.entries(post.comments  || {})) { %>
+            <p>&nbsp;&nbsp;&nbsp;<strong><%= key %></strong>: <%= value %></p>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Welcome to ChatBot</h1>
+        <div class="first">
+            <% for(let post of posts){ %>
+                <div class="post">
+                    <h3 class="user"> @<%= post.username %> </h3>
+                    <img src="<%= post.image %>" alt="Loading">
+                    <h4 class="content"> &nbsp;<span><%= post.username %></span> :   <%= post.content %> </h4>
+                    <h2>All Comments</h2>
+                    <% for (const [key, value] of Object.entries(post.comments  || {}).slice(0, 2)) { %>
+                        <p>&nbsp;&nbsp;&nbsp;<strong><%= key %></strong>: <%= value %></p>
+                    <% } %>
+                    <a href="/posts/<%= post.id %>/all" id="more">&nbsp;&nbsp;&nbsp;Click here to see all comments.....</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/posts/<%= post.id %>/add" id="more">Add a comment</a><br><br><br>
+                    <a href="/posts/<%= post.id %>">See in Detail</a> &nbsp;
+                    <a href="/posts/<%= post.id %>/edit">Edit</a><br><br>
+                    <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                        <button>Delete Post</button>
+                    </form>
+                </div>
+
+            <% } %>
+            <br>
+            <br>
+            <a href="http://localhost:8080/posts/new">Create New Post</a>
+        </div>
+        
+</body>
+</html>
